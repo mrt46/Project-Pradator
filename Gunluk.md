@@ -894,3 +894,34 @@ Signed:
 
 Timestamp: YYYY-MM-DD HH:MM UTC
 ================================================
+
+================================================
+## CURSOR REVIEW WORKFLOW CLARIFICATION
+================================================
+
+Decision:
+AI (System Architect) does not have direct access
+to the Cursor workspace or repository.
+
+Control Model:
+- Cursor generates code
+- Human acts as review gate
+- AI acts as architectural referee
+
+Review Scope:
+- Full code is NOT required by default
+- Diffs, summaries, or single critical files are sufficient
+- Logs are preferred over raw code when errors occur
+
+Rationale:
+This human-in-the-loop model prevents automation blindness
+and ensures deliberate, auditable system evolution.
+
+Conclusion:
+No blind automation.
+No uncontrolled changes.
+
+Signed:
+- CIO
+- AI (System Architect)
+================================================
