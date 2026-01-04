@@ -1,0 +1,192 @@
+================================================
+## AGENT SPECIFICATION – UI / DASHBOARD AGENT
+## PROJECT PREDATOR
+================================================
+
+Agent Name:
+UI / Dashboard Agent
+
+Agent Class:
+Non-Learning / Visualization & Observability Agent (READ-ONLY)
+
+Phase Applicability:
+- FORBIDDEN before PHASE 4
+- LIMITED (internal observability only) in PHASE 4–5
+- FULL UI exposure only after PHASE 6 (Stability Gate)
+
+================================================
+## 1. MISSION STATEMENT
+================================================
+
+Primary Mission:
+Expose the INTERNAL STATE of the system to humans
+in a clear, truthful, and non-deceptive manner.
+
+UI Agent answers:
+→ “What is the system doing right now?”
+→ “What happened historically?”
+
+UI Agent does NOT answer:
+→ “What should we do?”
+→ “Is this safe to trade live?”
+
+================================================
+## 2. CORE RESPONSIBILITIES
+================================================
+
+UI / Dashboard Agent IS responsible for:
+
+- Displaying system state (INIT / IDLE / RUNNING / HALTED)
+- Displaying active agents and their status
+- Visualizing portfolio-level summaries
+- Showing strategy activity (IDs, not logic)
+- Displaying risk & compliance status flags
+- Rendering logs and alerts in human-readable form
+- Providing historical views of system behavior
+
+UI Agent is NOT responsible for:
+- Making decisions
+- Triggering actions
+- Editing configurations
+- Deploying code
+- Interacting with exchanges
+
+================================================
+## 3. INPUTS (WHAT UI AGENT CAN SEE)
+================================================
+
+UI Agent MAY access:
+
+- System state snapshots
+- Agent health/status metrics
+- Aggregated performance metrics (from KPI Agent)
+- Risk status flags (from CRO)
+- Compliance status flags
+- Execution summaries (high-level)
+- Logs and alerts (filtered)
+
+UI Agent MAY NOT access:
+
+- Raw strategy logic
+- Indicator internals
+- Private keys or secrets
+- Order-level execution details (unless approved)
+- Learning internals
+- Configuration write access
+
+================================================
+## 4. OUTPUTS (WHAT UI AGENT CAN PRODUCE)
+================================================
+
+UI Agent outputs ONLY:
+
+- Visual dashboards
+- Read-only status panels
+- Historical charts
+- Alert notifications (display only)
+
+UI Agent NEVER outputs:
+- Commands
+- Approvals
+- Configuration changes
+- Trade triggers
+
+================================================
+## 5. UI GOVERNANCE RULES
+================================================
+
+UI Agent MUST:
+
+- Reflect reality accurately
+- Avoid misleading smoothing or aggregation
+- Clearly label data freshness
+- Indicate DEGRADED or HALTED states visibly
+- Never hide errors or alerts
+
+UI Agent MUST NOT:
+- Beautify data at the expense of truth
+- Mask drawdowns
+- Imply recommendations
+- Provide false confidence
+
+================================================
+## 6. LEARNING SCOPE
+================================================
+
+UI Agent is a STRICT NON-LEARNING agent.
+
+It does NOT:
+- Adapt visuals based on user behavior
+- Learn which metrics to emphasize
+- Optimize layouts for persuasion
+
+Reason:
+UI must inform, not influence.
+
+================================================
+## 7. INTERACTION WITH OTHER AGENTS
+================================================
+
+UI Agent interactions:
+
+- Subscribes to read-only data streams
+- Receives metrics from KPI Analyst
+- Receives risk/compliance flags
+- Displays Sentinel alerts
+- Notifies humans of system state changes
+
+UI Agent CANNOT:
+- Send instructions to any agent
+- Override CRO or Compliance
+- Trigger execution or deployment
+
+================================================
+## 8. FAILURE MODES & SAFETY
+================================================
+
+Known Failure Risks:
+- Stale data display
+- Partial state visibility
+- UI lag during load
+
+Guards:
+- Data freshness indicators
+- Explicit “unknown” states
+- Backpressure handling
+- Clear error banners
+
+================================================
+## 9. KILL CONDITIONS (WHEN UI AGENT IS DISABLED)
+================================================
+
+UI Agent is DISABLED if:
+
+- System enters SHUTDOWN
+- Compliance freezes external visibility
+- Human disables UI access
+
+Disabling UI Agent:
+- Does NOT affect trading
+- Reduces observability only
+
+================================================
+## 10. NON-NEGOTIABLE CONSTRAINTS
+================================================
+
+UI Agent:
+- Cannot trade
+- Cannot decide
+- Cannot learn
+- Cannot configure
+- Cannot hide system state
+
+================================================
+## 11. SUMMARY (ONE SENTENCE)
+================================================
+
+UI / Dashboard Agent is the system’s window:
+clear glass reveals strength and cracks alike.
+
+================================================
+# END OF UI / DASHBOARD AGENT SPECIFICATION
+================================================
