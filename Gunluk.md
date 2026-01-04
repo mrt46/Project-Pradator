@@ -591,3 +591,306 @@ Timestamp: YYYY-MM-DD HH:MM UTC
 ================================================
 # END OF JOURNAL ENTRY
 ================================================
+
+================================================
+## CAPITAL GROWTH SIMULATION – BASELINE
+================================================
+
+Initial Capital: €10,000
+Target Capital: €1,000,000
+Time Horizon: 5 years
+
+Simulation Method:
+- Monte Carlo (10,000 runs)
+- Aggressive multi-strategy model
+- Fixed risk constitution
+
+Results Summary:
+- Probability ≥ €1,000,000: ~7.9%
+- Blow-up probability: ~12%
+- Median outcome: €96,000
+
+Conclusion:
+Target is difficult but statistically achievable
+with aggressive trade frequency and strict discipline.
+
+Decision:
+Proceed with phased deployment.
+Do NOT relax risk rules to chase probability.
+
+Signed:
+- CIO
+- CRO
+- Compliance
+================================================
+================================================
+## STRATEGY KNOWLEDGE INGESTION – TRADINGVIEW
+================================================
+
+Date: YYYY-MM-DD
+
+Source:
+- TradingView public strategies
+- Manually provided Pine Scripts and descriptions
+
+Purpose:
+Use TradingView as a strategy inspiration library,
+NOT as a signal or execution source.
+
+Actions Taken:
+- Pine Scripts analyzed (read-only)
+- Indicator patterns extracted
+- Regime assumptions documented
+- No code copied or translated
+
+Integration Method:
+- Pattern distillation
+- Feature extraction
+- Strategy Memory enrichment
+
+Compliance Check:
+- No automated data scraping
+- No private strategies used
+- No direct deployment
+- Risk constitution unchanged
+
+Impact:
+- Strategy search space reduced
+- Alpha Factory efficiency improved
+- No increase in systemic risk
+
+Signed:
+- Strategist MCP
+- Compliance
+- CIO
+
+Timestamp: YYYY-MM-DD HH:MM UTC
+================================================
+
+================================================
+## PHASE A START – LOCAL SANDBOX
+================================================
+
+Date: YYYY-MM-DD
+Environment: Local Laptop
+Mode: Fake Market + Fake Execution
+
+Objectives:
+- Stress test strategy generation
+- Populate Strategy Memory
+- Observe system stability
+
+Constraints:
+- No real APIs
+- No external connections
+- No capital at risk
+
+Status:
+PHASE A started.
+
+Signed:
+- CIO
+- Compliance
+================================================
+
+================================================
+## PHASE B START – BINANCE PAPER TRADING
+================================================
+
+Date: YYYY-MM-DD
+Environment: Binance Paper Trading
+Mode: Real Market / Fake Capital
+
+Objectives:
+- Validate strategies on live market data
+- Test execution, slippage, and latency
+- Verify CRO, PM, and Compliance enforcement
+
+Constraints:
+- No real capital
+- No new strategy generation
+
+Status:
+PHASE B started.
+
+Signed:
+- CIO
+- CRO
+- Compliance
+================================================
+
+================================================
+## PHASE C GO-LIVE – CONTROLLED LIVE TRADING
+================================================
+
+Date: YYYY-MM-DD
+Environment: Live Binance
+Initial Capital: €XXX
+Risk Mode: Conservative Live
+
+Preconditions:
+- Phase A completed
+- Phase B completed
+- CRO approval granted
+- Compliance approval granted
+
+Constraints:
+- Limited capital
+- Strict exposure caps
+- Kill-switch armed
+
+Decision:
+Live trading authorized.
+
+Signed:
+- CIO
+- CRO
+- Compliance
+================================================
+
+================================================
+## SYSTEM LEARNING & DATA BANK CONFIRMATION
+================================================
+
+Decision:
+PROJECT PREDATOR operates with a multi-layer data bank.
+
+Learning Sources:
+- Strategy Memory (primary learning layer)
+- Operational Journal (context & audit)
+- Market & Execution data (testing & realism)
+
+Learning Scope:
+- Strategy selection and elimination
+- Parameter optimization within fixed bounds
+- Regime-specific performance recognition
+
+Explicit Limits:
+- No self-modifying risk rules
+- No architectural evolution
+- No autonomous reward learning
+
+Conclusion:
+The system learns through selection, not mutation.
+It improves by survival, not by rule-breaking.
+
+Signed:
+- CIO
+- CRO
+- Compliance
+================================================
+
+================================================
+## SYSTEM MAINTENANCE & RELIABILITY CONFIRMATION
+================================================
+
+Decision:
+PROJECT PREDATOR includes a dedicated maintenance and reliability layer.
+
+Maintenance Roles:
+- Developer MCP (application-level stability)
+- DevOps / Platform layer (deployment & dependencies)
+- SRE functions (resource & uptime monitoring)
+
+Scope of Authority:
+- Keep the system operational
+- Prevent crashes and degradation
+- Apply fixes only with safeguards
+
+Explicit Limits:
+- No feature development
+- No architectural changes
+- No risk logic modification
+
+Conclusion:
+The system is designed to be maintained,
+not continuously reinvented.
+
+Signed:
+- CIO
+- DevOps
+- CRO
+- Compliance
+================================================
+
+================================================
+## MARKET SCANNING & OPPORTUNITY SELECTION
+================================================
+
+Decision:
+PROJECT PREDATOR uses a dedicated Market Scanner Agent (MSA).
+
+Scope:
+- Daily scanning of Binance USDT pairs
+- Liquidity, volatility, and behavior filtering
+- No trade execution authority
+
+Daily Capacity:
+- Coins scanned: 50–300 (phase-dependent)
+- Trade candidates selected: 5–30
+
+Constraints:
+- API-friendly scanning
+- Cached market data
+- RateLimit Sentinel enforced
+
+Conclusion:
+The system searches broadly,
+but trades selectively.
+
+Signed:
+- Strategist MCP
+- CRO
+- Compliance
+================================================
+
+================================================
+## WORKFLOW STANDARD UPDATE – SINGLE TEXT POLICY
+================================================
+
+Date: YYYY-MM-DD
+Phase: PHASE 1 (Core Engine Skeleton)
+
+Decision:
+From this point forward, all system updates, architectural changes,
+agent definitions, operational plans, and simulations
+will be delivered as a SINGLE, contiguous, copyable text block.
+
+Rationale:
+- Prevent partial application errors
+- Avoid fragmented system state
+- Ensure deterministic documentation
+- Maintain audit and rollback clarity
+- Eliminate ambiguity during integration
+
+Operational Rule:
+- No multi-part instructions
+- No scattered explanations
+- No dependency on chat context
+- Each delivery must be self-contained
+
+Scope:
+- Architecture updates
+- Agent definitions
+- Strategy framework
+- Phase transitions
+- Journal entries
+- Operational procedures
+
+Effect:
+- Reduced integration risk
+- Clear versioning
+- Faster rollback
+- Higher system reliability
+
+Conclusion:
+System workflow standardized.
+All future inputs are treated as atomic units.
+
+Signed:
+- CIO
+- Compliance
+- CRO
+
+Timestamp: YYYY-MM-DD HH:MM UTC
+================================================
