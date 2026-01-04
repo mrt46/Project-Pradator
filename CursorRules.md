@@ -494,3 +494,151 @@ Autonomy without discipline is chaos.
 Discipline without autonomy is inefficiency.
 
 PROJECT PREDATOR balances both.
+
+#############################################
+# FILE: CursorRules.md (ADDENDUM)
+#############################################
+
+# ⚠️ ORGANIZATIONAL EXTENSION – HEDGE FUND ROLES ⚠️
+# This addendum is BINDING and extends the existing constitution.
+# No existing rule is overridden unless explicitly stated.
+
+################################################
+## 11. CHIEF RISK OFFICER (CRO) – RISK GOVERNOR
+################################################
+
+Role Definition:
+- CRO is an independent risk authority.
+- CRO is NOT subordinate to Strategist MCP.
+- CRO has absolute veto power over trading activity.
+
+Responsibilities:
+- Enforce maximum portfolio risk limits
+- Approve or reject strategies BEFORE live deployment
+- Override position sizing in extreme conditions
+- Trigger emergency de-risking
+
+Powers:
+- Disable specific strategies
+- Cap global exposure
+- Force system-wide deleverage
+- Trigger Kill Switch independent of drawdown ladder
+
+Rules:
+- CRO decisions OVERRIDE Strategist MCP decisions
+- CRO rules CANNOT be modified by Cursor
+- CRO logic is rule-based, not adaptive
+
+Explanation:
+In professional hedge funds, CRO exists to say “NO”
+when everyone else wants to say “YES”.
+This role prevents correlated, systemic failure.
+
+################################################
+## 12. PORTFOLIO MANAGER (PM) – CAPITAL ORCHESTRATOR
+################################################
+
+Role Definition:
+- Portfolio Manager manages capital ACROSS strategies.
+- PM does NOT generate signals.
+- PM allocates and balances risk between strategies.
+
+Responsibilities:
+- Capital allocation per strategy
+- Correlation analysis between strategies
+- Sector / asset exposure limits
+- Strategy-level max drawdown enforcement
+
+Key Functions:
+- Strategy correlation matrix
+- Exposure aggregation (by asset, sector, direction)
+- Capital throttling per strategy
+
+Rules:
+- No single strategy may exceed PM-defined capital limits
+- Highly correlated strategies MUST be throttled
+- PM decisions override individual strategy sizing
+
+Explanation:
+Alpha is generated at the strategy level,
+but risk emerges at the portfolio level.
+PM exists to control this emergence.
+
+################################################
+## 13. COMPLIANCE & RULE ENFORCER
+################################################
+
+Role Definition:
+- Compliance enforces rules, not performance.
+- Compliance is independent of PnL considerations.
+
+Responsibilities:
+- Enforce CursorRules.md and Mimari.md
+- Detect rule violations
+- Block non-compliant trades
+- Maintain immutable audit logs
+
+Powers:
+- Veto any trade that violates rules
+- Freeze strategy activation
+- Require post-mortem documentation
+
+Rules:
+- Compliance checks are MANDATORY before execution
+- No exception handling allowed
+- “Profitable but non-compliant” is INVALID
+
+Explanation:
+Compliance protects the system from itself.
+Profit without discipline is eventually fatal.
+
+################################################
+## 14. UPDATED AUTHORITY HIERARCHY
+################################################
+
+From highest to lowest authority:
+
+1. Human Operator (CIO)
+2. Compliance
+3. Chief Risk Officer (CRO)
+4. Portfolio Manager (PM)
+5. CursorRules.md
+6. Mimari.md
+7. Strategist MCP
+8. Predator Engine
+9. Generated Code
+
+Cursor MUST obey this hierarchy WITHOUT reconciliation.
+
+################################################
+## 15. UPDATED EXECUTION FLOW (WITH VETO POINTS)
+################################################
+
+Signal Generated
+        ↓
+Strategist MCP
+        ↓
+Portfolio Manager (Allocation & Correlation Check)
+        ↓
+Chief Risk Officer (Risk & Exposure Approval)
+        ↓
+Compliance (Rule Enforcement)
+        ↓
+Predator Engine
+        ↓
+Exchange
+
+ANY veto immediately halts execution of the signal.
+
+################################################
+## 16. FINAL EXTENSION RULE
+################################################
+
+If CRO, PM, or Compliance issues a veto:
+- The trade MUST NOT be executed
+- No retries allowed
+- Event MUST be logged in Gunluk.md
+
+#############################################
+# END OF ADDENDUM
+#############################################
