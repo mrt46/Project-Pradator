@@ -1,0 +1,288 @@
+================================================================================
+PROJECT PREDATOR
+PHASE 4 – PAPER TRADING ENGINE
+IMPLEMENTATION PLAN
+================================================================================
+
+Status: EXECUTION PLAN  
+Scope: Step-by-step build plan for Phase 4 architecture  
+Rule: NO REAL MONEY, NO REAL EXCHANGE, NO AI OPTIMIZATION
+
+================================================================================
+0. PRINCIPLES
+================================================================================
+
+1. Phase discipline is absolute.
+2. No step may bypass Risk or CRO.
+3. Each step must:
+   - Compile
+   - Run
+   - Log deterministically
+4. Only after a step is stable, move to the next.
+
+================================================================================
+1. STEP 1 – DATA MODEL FOUNDATION
+================================================================================
+
+Goal:
+- Define core data structures.
+
+Tasks:
+- Create:
+  - Trade
+  - Position
+  - StrategyStats
+  - PortfolioSnapshot
+- Implement:
+  - Serialization
+  - Basic storage (SQLite or in-memory)
+
+Deliverable:
+- Data models compile
+- Can create, store, and log objects
+
+================================================================================
+2. STEP 2 – MARKET DATA PROVIDER
+================================================================================
+
+Goal:
+- Feed the system with historical or fake data.
+
+Tasks:
+- Implement:
+  - CSV / file-based candle loader
+  - Event emitter: MARKET_TICK
+- Add:
+  - Speed control (backtest vs realtime simulation)
+
+Deliverable:
+- System logs MARKET_TICK events continuously
+
+================================================================================
+3. STEP 3 – PAPER PORTFOLIO CORE
+================================================================================
+
+Goal:
+- Track money without trading.
+
+Tasks:
+- Implement:
+  - Cash balance
+  - Equity calculation
+  - Open positions list
+- Add:
+  - PortfolioSnapshot logging
+
+Deliverable:
+- Portfolio updates over time with NO trades
+
+================================================================================
+4. STEP 4 – PAPER EXECUTION ENGINE
+================================================================================
+
+Goal:
+- Simulate orders.
+
+Tasks:
+- Implement:
+  - Order fill simulation
+  - Fee simulation
+  - Slippage simulation
+- Emit:
+  - ORDER_FILLED events
+
+Deliverable:
+- Can submit fake order and see it filled & logged
+
+================================================================================
+5. STEP 5 – POSITION MANAGER
+================================================================================
+
+Goal:
+- Connect fills to portfolio.
+
+Tasks:
+- Implement:
+  - Open position
+  - Close position
+  - Update unrealized PnL
+- Emit:
+  - POSITION_UPDATED events
+
+Deliverable:
+- Fake trades update portfolio & PnL correctly
+
+================================================================================
+6. STEP 6 – STRATEGY INTERFACE & DUMMY STRATEGIES
+================================================================================
+
+Goal:
+- Plug strategies into the loop.
+
+Tasks:
+- Define:
+  - BaseStrategy interface
+- Implement:
+  - 1–2 dummy strategies:
+    - AlwaysBuyStrategy
+    - RandomStrategy
+
+Deliverable:
+- Strategies produce STRATEGY_SIGNAL events
+
+================================================================================
+7. STEP 7 – CRO RISK GATE
+================================================================================
+
+Goal:
+- Enforce risk BEFORE execution.
+
+Tasks:
+- Implement:
+  - TRADE_PROPOSAL event
+  - CRO approval / rejection
+- Add checks:
+  - Max position size
+  - Daily drawdown (initial simple version)
+
+Deliverable:
+- Trades can be BLOCKED by CRO
+
+================================================================================
+8. STEP 8 – FULL EVENT PIPELINE WIRING
+================================================================================
+
+Goal:
+- Connect everything.
+
+Flow:
+MARKET_TICK
+→ Strategy
+→ STRATEGY_SIGNAL
+→ TRADE_PROPOSAL
+→ CRO
+→ TRADE_APPROVED
+→ Execution
+→ ORDER_FILLED
+→ Position Manager
+→ Portfolio Update
+
+Deliverable:
+- Full paper trade loop working end-to-end
+
+================================================================================
+9. STEP 9 – PERFORMANCE & ANALYTICS
+================================================================================
+
+Goal:
+- Measure results.
+
+Tasks:
+- Implement:
+  - PnL
+  - Drawdown
+  - Win rate
+- Log:
+  - Periodic performance reports
+
+Deliverable:
+- System prints performance stats periodically
+
+================================================================================
+10. STEP 10 – STRATEGY SCORING ENGINE (BASIC VERSION)
+================================================================================
+
+Goal:
+- Rank strategies.
+
+Tasks:
+- Implement:
+  - Basic scoring:
+    - PnL
+    - Drawdown
+    - Win rate
+- Produce:
+  - StrategyScore
+
+Deliverable:
+- Strategies get scores and ranking
+
+================================================================================
+11. STEP 11 – STRATEGY SELECTOR
+================================================================================
+
+Goal:
+- Enforce "only one strategy trades".
+
+Tasks:
+- Implement:
+  - Strategy enable/disable
+  - Highest-score selection
+- Enforce:
+  - StrategyGovernance.md rules
+
+Deliverable:
+- Only top strategy is active
+
+================================================================================
+12. STEP 12 – KILL-SWITCH LOGIC
+================================================================================
+
+Goal:
+- Protect the system.
+
+Tasks:
+- Implement:
+  - Global kill-switch (portfolio DD)
+  - Strategy-local kill-switch
+- Add:
+  - Cooldown mode
+
+Deliverable:
+- System can halt itself and disable strategies
+
+================================================================================
+13. STEP 13 – STABILITY RUN
+================================================================================
+
+Goal:
+- Prove the system is alive.
+
+Tasks:
+- Run:
+  - Multi-day paper simulation
+- Only:
+  - Bugfixes allowed
+
+Deliverable:
+- Stable logs
+- No crashes
+- No rule violations
+
+================================================================================
+14. WHAT IS STRICTLY FORBIDDEN IN PHASE 4
+================================================================================
+
+- No real exchange
+- No real orders
+- No leverage
+- No AI optimization
+- No overengineering
+
+================================================================================
+15. PHASE 4 EXIT CRITERIA
+================================================================================
+
+Phase 4 is COMPLETE if:
+
+- System:
+  - Runs end-to-end
+  - Enforces risk
+  - Selects strategies
+  - Produces PnL & stats
+- And:
+  - Survives at least 2–4 weeks paper run
+
+================================================================================
+END OF PHASE 4 IMPLEMENTATION PLAN
+================================================================================
